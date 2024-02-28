@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Class 5 walk through</title>
+        <style>
+
+            #container > div {
+                width: 200px;
+                height: 100px;
+                background-color: gray;
+            }
+
+            .container {
+                display: flex;
+                gap: 10px;
+            }
+
+            .blue {
+                border: 5px solid blue;
+            }
+            
+            .container > div {
+                text-align: center;
+            }
+
+            #hover_div {
+                background-color: red;
+                height: 100px;
+                width: 100px;
+            }
+
+            .purple_background {
+                background-color: purple;
+            }
+
+            .toggle_divs {
+                border: 3px solid black;
+                box-sizing: border-box;
+                height: 100px;
+                width: 100px;
+            }
+
+            div > p {
+                padding: 0 5px;
+            }
+
+            
+
+        </style>
+    </head>
+    <body>
+
+
+        <input type="button" id="button" value="Button">
+
+        <p id="blank_text">fill this</p>
+
+        <div class="container">
+            <div id="hover_div">
+                <p class="text">This is a red box</p>
+            </div>
+            <div class="toggle_divs">
+                <p class="text">This is a plain box</p>
+            </div>
+            <div class="toggle_divs">
+                <p class="text">This is a plain box</p>
+            </div>
+            <div class="toggle_divs">
+                <p class="text">This is a plain box</p>
+            </div>
+            <div class="toggle_divs">
+                <p class="text">This is a plain box</p>
+            </div>
+
+        </div>
+
+
+
+
+
+        
+        <script>
+
+
+            let paragraph_tag = document.getElementById('blank_text');
+            let button = document.getElementById('button');
+            let hover_div = document.getElementById('hover_div');
+            let divs = document.getElementsByClassName('toggle_divs');
+            
+
+
+
+            // Write a function that writes "OH GOODNEES" into my p tag
+
+            /*
+
+             // Write this beforehand, but delete it after because we restate it below as a function
+
+            button.onclick = function() {
+                paragraph_tag.textContent = "OH GOODNEES";
+            };
+
+            Now do it in a way you can put it in the input tag
+
+            */
+
+            function writeText() {
+                paragraph_tag.textContent = "OH GOODNEES";
+            }
+
+            // for the red box, hover and change color to purple
+
+
+            hover_div.onmouseenter = function() {
+                hover_div.style.backgroundColor = 'purple';
+            };
+
+            // make it change back to red after the hover
+
+            hover_div.onmouseleave = function() {
+                hover_div.style.backgroundColor = 'red';
+            };
+
+            // toggle the border
+
+            /*
+
+             // Write this beforehand, but delete it after because we restate it below as a function
+
+
+            button.onclick = function() {
+                hover_div.classList.toggle("blue");
+            };
+
+            have it toggle and change the text
+
+            */
+
+
+            function changeBorder(){
+                hover_div.classList.toggle("blue");
+            }
+
+
+            function changeText(){
+
+                if (paragraph_tag.textContent == 'fill this') {
+                paragraph_tag.textContent = 'OH GOODNESS';
+                } 
+                else {
+                    paragraph_tag.textContent = 'fill this';
+                }
+
+            }
+
+                // add eventlisteners because you have two click events
+
+            button.addEventListener('click',changeBorder);
+            button.addEventListener('click',changeText);
+
+
+            // hover events on all the divs
+
+
+                // selects all the divs with toggle_divs class (does not incldue the red one)
+
+
+            
+            // Write this beforehand, but delete it after because we restate it with the text color change below
+
+            /*
+
+            for (let i = 0; i < divs.length; i++) {
+
+                //goes through each div element
+
+                divs[i].addEventListener('mouseenter',function(){
+                    //hover over, make the div purple
+                    divs[i].classList.add('purple_background');
+
+                });   
+                divs[i].addEventListener('mouseleave',function(){
+
+                    // when it leaves, remove purple background
+                    divs[i].classList.remove('purple_background');
+                });   
+            }
+
+            */
+
+            // change the text color inside the div
+
+
+            for (let i = 0; i < divs.length; i++) {
+
+                // select the .text element inside each div
+                let text = divs[i].querySelector('.text');
+
+                divs[i].addEventListener('mouseenter',function(){
+
+                    //hover over, make the div purple
+                    divs[i].classList.add('purple_background');
+
+                    // makes the words inside .text element white
+                    text.style.color = 'white';
+                });   
+                divs[i].addEventListener('mouseleave',function(){
+
+                    // when it leaves, remove purple background
+                    divs[i].classList.remove('purple_background');
+
+                    // makes the words inside .text element turb back to black
+                    text.style.color = 'black';
+                });   
+            }
+
+    
+
+
+
+
+        </script>
+
+    </body>
+</html>

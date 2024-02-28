@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Class 5 walk through</title>
+        <style>
+
+            #container > div {
+                width: 200px;
+                height: 100px;
+                background-color: gray;
+            }
+
+            .container {
+                display: flex;
+                gap: 10px;
+            }
+
+            .blue {
+                border: 5px solid blue;
+            }
+            
+            .container > div {
+                text-align: center;
+            }
+
+            #hover_div {
+                background-color: red;
+                height: 100px;
+                width: 100px;
+            }
+
+            .purple_background {
+                background-color: purple;
+            }
+
+            .toggle_divs {
+                border: 3px solid black;
+                box-sizing: border-box;
+                height: 100px;
+                width: 100px;
+            }
+
+            div > p {
+                padding: 0 5px;
+            }
+
+        </style>
+    </head>
+    <body>
+
+
+        <input type="button" id="button" value="Button">
+
+        <p id="blank_text">fill this</p>
+
+        <div class="container">
+            <div id="hover_div">
+                <p class="text">This is a red box</p>
+            </div>
+            <div class="toggle_divs">
+                <p class="text">This is a plain box</p>
+            </div>
+            <div class="toggle_divs">
+                <p class="text">This is a plain box</p>
+            </div>
+            <div class="toggle_divs">
+                <p class="text">This is a plain box</p>
+            </div>
+            <div class="toggle_divs">
+                <p class="text">This is a plain box</p>
+            </div>
+
+        </div>
+
+
+
+
+
+        
+        <script>
+
+            // our variables
+
+            let paragraph_tag = document.getElementById('blank_text');
+            let button = document.getElementById('button');
+            let hover_div = document.getElementById('hover_div');
+            let divs = document.getElementsByClassName('toggle_divs');
+
+
+            // Write a function that writes "OH GOODNEES" into my p tag
+
+
+            // Now do it in a way you can put it in the input tag
+
+
+            // for the red box, hover and change color to purple
+
+
+            // make it change back to red after the hover
+
+
+            // toggle the border
+
+
+            // have it toggle and change the text
+
+
+            // hover events on all the divs
+
+
+            // change the text color inside the div
+
+
+
+
+        </script>
+
+    </body>
+</html>

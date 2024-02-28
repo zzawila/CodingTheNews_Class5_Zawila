@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Class 5 walk through</title>
+        <style>
+
+            #container > div {
+                width: 200px;
+                height: 100px;
+                background-color: gray;
+            }
+
+            .blue {
+                border: 5px solid blue;
+            }
+
+            h2 {
+                font-family: 'Arial', sans-serif;
+                text-align: left;
+                font-size: 1em;
+                margin: 0;
+            }
+
+
+            #hover_div {
+                background-color: red;
+                height: 100px;
+                width: 100px;
+            }
+
+            .toggle_divs {
+                background-color: gray;
+                height: 100px;
+                width: 100px;
+                margin-top: 10px;
+            }
+
+            .button_container {
+                width: 100%;
+                margin: 30px auto;
+                max-width: 800px;
+            }
+
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                margin: 0 auto;
+                max-width: 800px;
+            }
+
+            .image_container {
+                flex-basis: calc(25% - 10px);
+                margin: 5px;
+                text-align: center; 
+                position: relative;
+                cursor: pointer;
+            }
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                height: 100%;
+            }
+
+            .border_class {
+                border: 5px solid gold;
+                box-sizing: border-box;
+            }
+            
+
+            .bioContainer {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                padding: 10px;
+                background-color: rgba(255,255,255,0.8);
+                width: 100%;
+            }
+
+            .no-display {
+                display: none;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div class="button_container">
+            <input type="button" id="All" value="All">
+            <input type="button" id="Adjuncts" value="Adjuncts">
+            <input type="button" id="Professors" value="Professors"> 
+        </div>
+
+
+
+        <div class="container">
+            <div class="image_container adjunct">
+                <img src="https://www.journalism.cuny.edu/wp-content/uploads/2023/12/JaclynJeffrey-Wilensky-400x600-bw.jpg">
+                <div class="bioContainer no-display">
+                    <h2>Jaclyn Jeffrey-Wilensky</h2>
+                </div>
+            </div>    
+            <div class="image_container adjunct">
+                <img src="https://www.journalism.cuny.edu/wp-content/uploads/2023/12/RahulMukherjee-400x600-bw.jpg">
+                <div class="bioContainer no-display">
+                    <h2>Rahul Mukherjee</h2>
+                </div>
+            </div>    
+            <div class="image_container adjunct">
+                <img src="https://www.journalism.cuny.edu/wp-content/uploads/2021/08/taylorEldridge-bw.jpg">
+                <div class="bioContainer no-display">
+                    <h2>Taylor Eldridge</h2>
+                </div>
+            </div>    
+            <div class="image_container adjunct">
+                <img src="https://www.journalism.cuny.edu/wp-content/uploads/2021/08/Adrian-Garcia-Headshot-2018-bw.jpg">
+                <div class="bioContainer no-display">
+                    <h2>Adrian Garcia</h2>
+                </div>
+            </div>    
+            <div class="image_container professor">
+                <img src="https://www.journalism.cuny.edu/wp-content/uploads/2014/09/Lam-Thuy-Vo-Feb.-2023-400x600-bw.jpeg">
+                <div class="bioContainer no-display">
+                    <h2>Lam Thuy Vo</h2>
+                </div>
+            </div>    
+            <div class="image_container adjunct">
+                <img src="https://www.journalism.cuny.edu/wp-content/uploads/2021/03/alana-pipe-headshot-400x505-bw.jpeg">
+                <div class="bioContainer no-display">
+                    <h2>Alana Pipe</h2>
+                </div>
+            </div>    
+            <div class="image_container adjunct">
+                <img src="https://www.journalism.cuny.edu/wp-content/uploads/2017/07/tc_mccarthy-copy-400x600-bw.jpeg">
+                <div class="bioContainer no-display">
+                    <h2>TC McCarthy</h2>
+                </div>
+            </div>    
+            <div class="image_container professor">
+                <img src="https://www.journalism.cuny.edu/wp-content/uploads/2008/10/sandeep-headshot-400x400-400x400-bw.jpg">
+                <div class="bioContainer no-display">
+                    <h2>Sandeep Junnarkar</h2>
+                </div>
+            </div>   
+        </div>
+
+
+
+
+
+        
+        <script>
+
+            // select the adjunct divs
+            let adjuncts = document.getElementsByClassName('adjunct');
+
+            // select the professor divs
+            let professors = document.getElementsByClassName('professor');
+
+            // select all the buttons
+            let adjuncts_button = document.getElementById('Adjuncts');
+            let professor_button = document.getElementById('Professors');
+            let all = document.getElementById('All');
+
+
+
+            //if adjunct is clicked, add border_class to the list of classes and remove it from the professors
+
+            //if professors is clicked, add border_class to the list of classes and remove it from the adjuncts
+
+
+            //if all is clicked, remove border_class from all divs
+
+
+            
+            // select all the image containers
+
+
+            // Make a loop that goes through all the divs
+
+                // query select the bioContainer class inside
+
+                // add an event(s) that remove the no-display class if the mouse hovers over, and ads it back 
+
+
+
+
+
+
+
+
+        </script>
+
+    </body>
+</html>
