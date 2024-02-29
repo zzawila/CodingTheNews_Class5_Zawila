@@ -90,26 +90,86 @@
 
             // Write a function that writes "OH GOODNEES" into my p tag
 
+            // button.onclick = function() {
+            //     paragraph_tag.textContent = "OH GOODNESS";
+            // }
 
             // Now do it in a way you can put it in the input tag
 
 
+
             // for the red box, hover and change color to purple
 
+            hover_div.onmouseenter = function() {
+                hover_div.style.backgroundColor = 'purple';
+            }
 
             // make it change back to red after the hover
 
+            hover_div.onmouseleave = function() {
+                hover_div.style.backgroundColor = 'red';
+            }
 
             // toggle the border
 
 
+            // function textChange() {
+            //     paragraph_tag.textContent = "OH GOODNESS";
+            // }
+
+            function borderToggle(){
+                hover_div.classList.toggle('blue');
+            }
+
+
+
+
             // have it toggle and change the text
 
+            function textChange(){
+                if(paragraph_tag.textContent == 'fill this'){
+                    paragraph_tag.textContent = 'OH GOODNESS';
+                }
+                else{
+                    paragraph_tag.textContent = 'fill this';
+                }
+            }
+
+            button.addEventListener('click',textChange);
+            button.addEventListener('click',borderToggle);
 
             // hover events on all the divs
 
+            // for (let index = 0; index < divs.length; index++) {
+
+            //     divs[index].addEventListener('mouseenter',function(element){
+            //         divs[index].classList.add('purple_background');
+            //     });
+
+            //     divs[index].addEventListener('mouseleave',function(element){
+            //         divs[index].classList.remove('purple_background');
+            //     });
+
+            // }
 
             // change the text color inside the div
+
+            for (let index = 0; index < divs.length; index++) {
+
+                let text = divs[index].querySelector('.text');
+
+                divs[index].addEventListener('mouseenter',function(element){
+                    divs[index].classList.add('purple_background');
+                    text.style.color = 'white';
+                    text.textContent = 'This is a purple box';
+                });
+
+                divs[index].addEventListener('mouseleave',function(element){
+                    divs[index].classList.remove('purple_background');
+                    text.style.color = 'black';
+                    text.textContent = 'This is a plain box';
+                });
+            }
 
 
 

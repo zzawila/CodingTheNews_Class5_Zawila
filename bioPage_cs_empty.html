@@ -168,15 +168,65 @@
 
             //if adjunct is clicked, add border_class to the list of classes and remove it from the professors
 
+            function changeBorder_adjunct(){
+                
+                for (let i = 0; i < adjuncts.length; i++) {
+                adjuncts[i].classList.add('border_class');
+                };
+
+                for (let i = 0; i < professors.length; i++) {
+                professors[i].classList.remove('border_class');
+                };
+
+            }
+
+            adjuncts_button.addEventListener('click',changeBorder_adjunct);
+
+
+
             //if professors is clicked, add border_class to the list of classes and remove it from the adjuncts
+
+            function changeBorder_professor(){
+                
+                for (let i = 0; i < professors.length; i++) {
+                professors[i].classList.add('border_class');
+                };
+
+                for (let i = 0; i < adjuncts.length; i++) {
+                adjuncts[i].classList.remove('border_class');
+                };
+
+            }
+
+
+            professor_button.addEventListener('click',changeBorder_professor);
+
 
 
             //if all is clicked, remove border_class from all divs
+
+            function changeBorder_all(){
+                
+                for (let i = 0; i < professors.length; i++) {
+                professors[i].classList.remove('border_class');
+                };
+
+                for (let i = 0; i < adjuncts.length; i++) {
+                adjuncts[i].classList.remove('border_class');
+                };
+
+            }
+
+            all.addEventListener('click',changeBorder_all);
+
+
+
 
 
             
             // select all the image containers
 
+            let divs = document.getElementByClassName('image_container');
 
             // Make a loop that goes through all the divs
 
