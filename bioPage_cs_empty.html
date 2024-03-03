@@ -209,6 +209,14 @@
                 professors[i].classList.remove('border_class');
                 };
 
+                for (let i = 0; i < graphics.length; i++) {
+                graphics[i].classList.remove('border_class_2');
+                };
+
+                for (let i = 0; i < data.length; i++) {
+                data[i].classList.remove('border_class_2');
+                };
+
             }
 
             adjuncts_button.addEventListener('click',changeBorder_adjunct);
@@ -223,6 +231,14 @@
 
                 for (let i = 0; i < data.length; i++) {
                 data[i].classList.remove('border_class_2');
+                };
+
+                for (let i = 0; i < professors.length; i++) {
+                professors[i].classList.remove('border_class');
+                };
+
+                for (let i = 0; i < adjuncts.length; i++) {
+                adjuncts[i].classList.remove('border_class');
                 };
 
             }
@@ -243,6 +259,14 @@
                 adjuncts[i].classList.remove('border_class');
                 };
 
+                for (let i = 0; i < graphics.length; i++) {
+                graphics[i].classList.remove('border_class_2');
+                };
+
+                for (let i = 0; i < data.length; i++) {
+                data[i].classList.remove('border_class_2');
+                };
+
             }
 
 
@@ -261,16 +285,6 @@
                 graphics[i].classList.remove('border_class_2');
                 };
 
-            }
-
-            data_button.addEventListener('click',changeBorder_data);
-
-
-
-            //if all is clicked, remove border_class from all divs
-
-            function changeBorder_all(){
-                
                 for (let i = 0; i < professors.length; i++) {
                 professors[i].classList.remove('border_class');
                 };
@@ -281,7 +295,21 @@
 
             }
 
-            all.addEventListener('click',changeBorder_all);
+            data_button.addEventListener('click',changeBorder_data);
+
+
+
+            //if all is clicked, remove border_class from all divs
+
+            all.onclick = function(){
+                for (let i = 0; i < professors.length; i++) {
+                    professors[i].classList.remove('border_class');
+                }
+                for (let i = 0; i < adjuncts.length; i++) {
+                    adjuncts[i].classList.remove('border_class');
+                }
+
+            }
 
 
 
