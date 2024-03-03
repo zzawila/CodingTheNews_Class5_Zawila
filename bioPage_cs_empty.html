@@ -56,6 +56,11 @@
                 text-align: center; 
                 position: relative;
                 cursor: pointer;
+                opacity: 1;
+            }
+
+            .image_container:hover {
+                opacity: 0.5;
             }
 
             img {
@@ -68,6 +73,13 @@
                 border: 5px solid gold;
                 box-sizing: border-box;
             }
+
+            .border_class_2 {
+                border: 5px solid orangered;
+                box-sizing: border-box;
+            }
+
+
             
 
             .bioContainer {
@@ -83,6 +95,8 @@
                 display: none;
             }
 
+
+
         </style>
     </head>
     <body>
@@ -93,52 +107,58 @@
             <input type="button" id="Professors" value="Professors"> 
         </div>
 
+        <div class="subject_button_container">
+            <input type="button" id="Any" value="Any">
+            <input type="button" id="Graphics" value="Graphics">
+            <input type="button" id="Data" value="Data"> 
+        </div>
+
 
 
         <div class="container">
-            <div class="image_container adjunct">
+            <div class="image_container adjunct data">
                 <img src="https://www.journalism.cuny.edu/wp-content/uploads/2023/12/JaclynJeffrey-Wilensky-400x600-bw.jpg">
                 <div class="bioContainer no-display">
                     <h2>Jaclyn Jeffrey-Wilensky</h2>
                 </div>
             </div>    
-            <div class="image_container adjunct">
+            <div class="image_container adjunct graphics">
                 <img src="https://www.journalism.cuny.edu/wp-content/uploads/2023/12/RahulMukherjee-400x600-bw.jpg">
                 <div class="bioContainer no-display">
                     <h2>Rahul Mukherjee</h2>
                 </div>
             </div>    
-            <div class="image_container adjunct">
+            <div class="image_container adjunct data">
                 <img src="https://www.journalism.cuny.edu/wp-content/uploads/2021/08/taylorEldridge-bw.jpg">
                 <div class="bioContainer no-display">
                     <h2>Taylor Eldridge</h2>
                 </div>
             </div>    
-            <div class="image_container adjunct">
+            <div class="image_container adjunct data">
                 <img src="https://www.journalism.cuny.edu/wp-content/uploads/2021/08/Adrian-Garcia-Headshot-2018-bw.jpg">
                 <div class="bioContainer no-display">
                     <h2>Adrian Garcia</h2>
                 </div>
             </div>    
-            <div class="image_container professor">
+            <div class="image_container professor data">
                 <img src="https://www.journalism.cuny.edu/wp-content/uploads/2014/09/Lam-Thuy-Vo-Feb.-2023-400x600-bw.jpeg">
                 <div class="bioContainer no-display">
                     <h2>Lam Thuy Vo</h2>
                 </div>
             </div>    
-            <div class="image_container adjunct">
+            <div class="image_container adjunct graphics">
                 <img src="https://www.journalism.cuny.edu/wp-content/uploads/2021/03/alana-pipe-headshot-400x505-bw.jpeg">
                 <div class="bioContainer no-display">
                     <h2>Alana Pipe</h2>
                 </div>
             </div>    
-            <div class="image_container adjunct">
+            <div class="image_container adjunct graphics">
                 <img src="https://www.journalism.cuny.edu/wp-content/uploads/2017/07/tc_mccarthy-copy-400x600-bw.jpeg">
                 <div class="bioContainer no-display">
                     <h2>TC McCarthy</h2>
                 </div>
             </div>    
-            <div class="image_container professor">
+            <div class="image_container professor data">
                 <img src="https://www.journalism.cuny.edu/wp-content/uploads/2008/10/sandeep-headshot-400x400-400x400-bw.jpg">
                 <div class="bioContainer no-display">
                     <h2>Sandeep Junnarkar</h2>
@@ -164,6 +184,17 @@
             let professor_button = document.getElementById('Professors');
             let all = document.getElementById('All');
 
+            // select the graphics divs
+            let graphics = document.getElementsByClassName('graphics');
+
+            // select the data divs
+            let data = document.getElementsByClassName('data');
+
+            // select all the buttons
+            let graphics_button = document.getElementById('Graphics');
+            let data_button = document.getElementById('Data');
+            let any = document.getElementById('Any');
+
 
 
             //if adjunct is clicked, add border_class to the list of classes and remove it from the professors
@@ -181,6 +212,22 @@
             }
 
             adjuncts_button.addEventListener('click',changeBorder_adjunct);
+
+            //filter for subject matter - graphics
+
+            function changeBorder_graphics(){
+                
+                for (let i = 0; i < graphics.length; i++) {
+                graphics[i].classList.add('border_class_2');
+                };
+
+                for (let i = 0; i < data.length; i++) {
+                data[i].classList.remove('border_class_2');
+                };
+
+            }
+
+            graphics_button.addEventListener('click',changeBorder_graphics);
 
 
 
@@ -202,6 +249,23 @@
             professor_button.addEventListener('click',changeBorder_professor);
 
 
+            //filter for subject matter - data
+
+            function changeBorder_data(){
+                
+                for (let i = 0; i < data.length; i++) {
+                data[i].classList.add('border_class_2');
+                };
+
+                for (let i = 0; i < graphics.length; i++) {
+                graphics[i].classList.remove('border_class_2');
+                };
+
+            }
+
+            data_button.addEventListener('click',changeBorder_data);
+
+
 
             //if all is clicked, remove border_class from all divs
 
@@ -221,12 +285,27 @@
 
 
 
+            //create all subjects filter button
+
+            function changeBorder_all(){
+                
+                for (let i = 0; i < graphics.length; i++) {
+                graphics[i].classList.remove('border_class_2');
+                };
+
+                for (let i = 0; i < data.length; i++) {
+                data[i].classList.remove('border_class_2');
+                };
+
+            }
+
+            any.addEventListener('click',changeBorder_all);
 
 
             
             // select all the image containers
 
-            let divs = document.getElementByClassName('image_container');
+            let divs = document.getElementsByClassName('image_container');
 
             // Make a loop that goes through all the divs
 
@@ -237,7 +316,41 @@
 
 
 
+            //50% opacity on hover
 
+
+
+ 
+
+            // for (let i = 0; i < divs.length; i++) {
+            //     let hover_div = divs[i];
+
+            //     hover_div.addEventListener('mouseenter', () => {
+            //     hover_div.style.opacity = '0.5';
+            //     });
+
+            //     hover_div.addEventListener('mouseleave', () => {
+            //     hover_div.style.opacity = '1';
+            //     });
+            
+            // }
+
+
+            function change_opacity(container, opacity) {
+                image_container.style.opacity = opacity;
+            }
+
+            for (let i = 0; i < divs.length; i++) {
+                let hover_div = divs[i];
+
+                hover_div.addEventListener('mouseenter', () => {
+                change_opacity(hover_div, '0.5');
+                });
+
+                hover_div.addEventListener('mouseleave', () => {
+                change_opacity(hover_div, '1');
+                });
+            }
 
 
 
